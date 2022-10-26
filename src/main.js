@@ -76,25 +76,28 @@ const cardNumberPattern = {
 
 const cardNumberMasked = IMask(cardNumber, cardNumberPattern)
 
-const formCard = document.querySelector("form")
 const addButton = document.querySelector("#button-card")
+
 addButton.addEventListener("click", () => {
-  formCard.value === null
+  ;(cardHolder.value.length === 0) |
+  (expirationDate.value.length === 0) |
+  (securityCode.value.length === 0) |
+  (cardNumber.value.length === 0)
     ? Swal.fire({
+        title: "Opa!",
+        text: "Campos vazios",
+        icon: "error",
+        confirmButtonText: "Tente Novamente",
+      })
+    : Swal.fire({
         title: "Parabéns",
         text: "Seu cartão foi adicionado!",
         icon: "success",
         confirmButtonText: "Obrigada!",
       })
-    : Swal.fire({
-        title: "Opa!",
-        text: "Você esqueceu de algo...",
-        icon: "error",
-        confirmButtonText: "Tente Novamente",
-      })
 })
 
-formCard.addEventListener("submit", (e) => {
+document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault()
 })
 
