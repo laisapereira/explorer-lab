@@ -109,6 +109,7 @@
             ><img
               src="/cc-visa.svg"
               alt="ícone do cartão de crédito selecionado"
+              id="icon-card"
           /></span>
         </div>
 
@@ -142,7 +143,7 @@
 
         <div class="input-wrapper">
           <label for="card-holder">Nome do titular</label>
-          <input id="card-holder" />
+          <input id="card-holder" type="text" pattern="[A-Z]" />
         </div>
 
         <div class="flex">
@@ -157,7 +158,7 @@
           </div>
         </div>
 
-        <button>ADICIONAR CARTÃO</button>
+        <button id="button-card">ADICIONAR CARTÃO</button>
       </form>
     </div>
 
