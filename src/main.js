@@ -12,12 +12,12 @@ function setCardType(type) {
     default: ["black", "gray"],
   }
 
-  ccBgColor01.setAttribute("fill", colors[type][0])
-  ccBgColor02.setAttribute("fill", colors[type][0])
+  ccBgColor01.setAttribute("fill", colors[`${type}`][0])
+  ccBgColor02.setAttribute("fill", colors[`${type}`][1])
   ccLogo.setAttribute("src", `cc-${type}.svg`)
 }
 
-setCardType("default")
+globalThis.setCardType = setCardType
 
 const securityCode = document.querySelector("#security-code")
 const securityCodePattern = {
@@ -106,10 +106,13 @@ expirationDateMasked.on("accept", () => {
 
 function updateExpirationDate(expiration) {
   const ccExpiration = document.querySelector(".cc-expiration .value")
-  ccExpiration.innerText = code.length === 0 ? "01/32" : expiration
+  ccExpiration.innerText = expiration.length === 0 ? "01/32" : expiration
 }
 
 cardNumberMasked.on("accept", () => {
+  const cardTypeDynamic = cardNumberMasked.masked.currentMask.cardtype
+  setCardType(cardTypeDynamic)
+  console.log(cardTypeDynamic)
   updateCardNumber(cardNumberMasked.value)
 })
 
