@@ -1,5 +1,6 @@
 import "./css/index.css"
 import IMask from "imask"
+import Swal from "sweetalert2"
 
 const ccBgColor01 = document.querySelector("#fill-color-one")
 const ccBgColor02 = document.querySelector("#fill-color-two")
@@ -75,12 +76,25 @@ const cardNumberPattern = {
 
 const cardNumberMasked = IMask(cardNumber, cardNumberPattern)
 
+const formCard = document.querySelector("form")
 const addButton = document.querySelector("#button-card")
 addButton.addEventListener("click", () => {
-  alert("Cartão adicionado")
+  formCard.value === null
+    ? Swal.fire({
+        title: "Congratulations",
+        text: "Your card was added!",
+        icon: "success",
+        confirmButtonText: "Thank you",
+      })
+    : Swal.fire({
+        title: "Error!",
+        text: "It's missing something here...",
+        icon: "error",
+        confirmButtonText: "Try Again",
+      })
 })
 
-document.querySelector("form").addEventListener("submit", (e) => {
+formCard.addEventListener("submit", (e) => {
   e.preventDefault()
 })
 
@@ -112,7 +126,6 @@ function updateExpirationDate(expiration) {
 cardNumberMasked.on("accept", () => {
   const cardTypeDynamic = cardNumberMasked.masked.currentMask.cardtype
   setCardType(cardTypeDynamic)
-  console.log(cardTypeDynamic)
   updateCardNumber(cardNumberMasked.value)
 })
 
