@@ -81,16 +81,16 @@ const addButton = document.querySelector("#button-card")
 addButton.addEventListener("click", () => {
   formCard.value === null
     ? Swal.fire({
-        title: "Congratulations",
-        text: "Your card was added!",
+        title: "Parabéns",
+        text: "Seu cartão foi adicionado!",
         icon: "success",
-        confirmButtonText: "Thank you",
+        confirmButtonText: "Obrigada!",
       })
     : Swal.fire({
-        title: "Error!",
-        text: "It's missing something here...",
+        title: "Opa!",
+        text: "Você esqueceu de algo...",
         icon: "error",
-        confirmButtonText: "Try Again",
+        confirmButtonText: "Tente Novamente",
       })
 })
 
