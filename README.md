@@ -22,6 +22,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Node e NPM](https://nodejs.org/)
 - [Vite](https://vitejs.dev/)
 - [iMask](https://imask.js.org)
+- Como extra, utilizei a biblioteca [SweetAlert2](https://sweetalert2.github.io/)
 
 ## 💻 Projeto
 
@@ -29,7 +30,7 @@ O Rocketpay simula o formulário de preenchimento de cartão de crédito, onde �
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/gpqavL469k0pPUGOmAQEM9/Explorer-Lab-%2301/duplicate)
 
 ## :memo: Licença
 
