@@ -85,7 +85,7 @@ addButton.addEventListener("click", () => {
   (cardNumber.value.length === 0)
     ? Swal.fire({
         title: "Opa!",
-        text: "Campos vazios",
+        text: "Há campos vazios!",
         icon: "error",
         confirmButtonText: "Tente Novamente",
       })
